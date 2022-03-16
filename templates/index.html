@@ -27,29 +27,18 @@
         </thead>
         <tbody>
 
+        {% for time in time_list %}
             <tr>
-            <th scope="row">6:00</th>
-            <td>---</td>
-            <td>---</td>
-            <td>---</td>
-            <td>---</td>
-            <td>---</td>
-            <td>---</td>
-            <td>---</td>
-            </tr>
-
-            <tr>
-            <th scope="row">6:30</th>
-            <td>---</td>
-            <td>---</td>
+            <th scope="row">{{ time }}</th>
             <td></td>
             <td></td>
-            <td>Erhan</td>
-            <td>Shattyk</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
             <td></td>
             </tr>
-
-
+        {% endfor %}
 
         </tbody>
     </table>
