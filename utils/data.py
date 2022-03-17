@@ -12,3 +12,13 @@ def get_time():
         time_list.append(time)
 
     return time_list
+
+class Schedule:
+    def __init__(self, _start_time, _end_time):
+        self.start_time = _start_time
+        self.end_time = _end_time
+
+    def get_schedule(self):
+        dict = {'start_time': self.start_time,
+                'end_time': self.end_time}
+        return dict
