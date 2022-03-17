@@ -9,7 +9,7 @@ def index(request):
 
         time_list = data.get_time()
 
-        schedule = data.Schedule('9:00', '10:00')
+        schedule = data.Schedule('9:00', '10:00', 'Wednesday')
         schedule_dict = schedule.get_schedule()
 
         return render(request, 'index.html', context={'time_list': time_list,
