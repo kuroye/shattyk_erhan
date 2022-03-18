@@ -9,10 +9,10 @@
 
 </head>
 <body>
-
-{% for value in schedule.values %}
-<h1>{{ value }}</h1>
+{% for schedule in schedules %}
+<h1>{{ schedule.start_time }}</h1>
 {% endfor %}
+
 
 
 
@@ -35,6 +35,8 @@
         {% for time in time_list %}
             <tr>
             <th scope="row">{{ time }}</th>
+
+
             <td></td>
             <td></td>
             <td></td>
