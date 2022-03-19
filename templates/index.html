@@ -10,7 +10,7 @@
 </head>
 <body>
 {% for schedule in schedules %}
-<h1>{{ schedule.start_time }}</h1>
+    <h1>{{ schedule.start_time }}</h1>
 {% endfor %}
 
 
@@ -33,19 +33,91 @@
         <tbody>
 
         {% for time in time_list %}
+
+
             <tr>
+
+
             <th scope="row">{{ time }}</th>
 
 
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            </tr>
+
+            <td>
+                {% for schedule in schedules %}
+                    {% if schedule.day_of_the_week == 'Monday' and schedule.start_time == time %}
+                        {{ schedule.start_time }}
+                    {% elif schedule.day_of_the_week == 'Monday' and schedule.end_time == time %}
+                        {{ schedule.end_time }}
+                    {% endif %}
+                {% endfor %}
+            </td>
+
+            <td>
+                {% for schedule in schedules %}
+                    {% if schedule.day_of_the_week == 'Tuesday' and schedule.start_time == time %}
+                        {{ schedule.start_time }}
+                    {% elif schedule.day_of_the_week == 'Tuesday' and schedule.end_time == time %}
+                        {{ schedule.end_time }}
+                    {% endif %}
+                {% endfor %}
+
+            </td>
+
+            <td>
+                {% for schedule in schedules %}
+                    {% if schedule.day_of_the_week == 'Wednesday' and schedule.start_time == time %}
+                        {{ schedule.start_time }}
+                    {% elif schedule.day_of_the_week == 'Wednesday' and schedule.end_time == time %}
+                        {{ schedule.end_time }}
+                    {% endif %}
+                {% endfor %}
+            </td>
+
+
+            <td>
+                {% for schedule in schedules %}
+                    {% if schedule.day_of_the_week == 'Thursday' and schedule.start_time == time %}
+                        {{ schedule.start_time }}
+                    {% elif schedule.day_of_the_week == 'Thursday' and schedule.end_time == time %}
+                        {{ schedule.end_time }}
+                    {% endif %}
+                {% endfor %}
+            </td>
+
+            <td>
+                {% for schedule in schedules %}
+                    {% if schedule.day_of_the_week == 'Friday' and schedule.start_time == time %}
+                        {{ schedule.start_time }}
+                    {% elif schedule.day_of_the_week == 'Friday' and schedule.end_time == time %}
+                        {{ schedule.end_time }}
+                    {% endif %}
+                {% endfor %}
+            </td>
+
+            <td>
+                {% for schedule in schedules %}
+                    {% if schedule.day_of_the_week == 'Saturday' and schedule.start_time == time %}
+                        {{ schedule.start_time }}
+                    {% elif schedule.day_of_the_week == 'Saturday' and schedule.end_time == time %}
+                        {{ schedule.end_time }}
+                    {% endif %}
+                {% endfor %}
+            </td>
+
+            <td style="background-color: ">
+                {% for schedule in schedules %}
+                    {% if schedule.day_of_the_week == 'Sunday' and schedule.start_time == time %}
+                        {{ schedule.start_time }}
+                    {% elif schedule.day_of_the_week == 'Sunday' and schedule.end_time == time %}
+                        {{ schedule.end_time }}
+                    {% endif %}
+                {% endfor %}
+            </td>
+
         {% endfor %}
+
+
+        </tr>
 
         </tbody>
     </table>
