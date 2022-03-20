@@ -9,12 +9,6 @@
 
 </head>
 <body>
-{% for schedule in schedules %}
-    <h1>{{ schedule.start_time }}</h1>
-{% endfor %}
-
-
-
 
 <div style="padding: 100px">
     <table class="table">
@@ -41,78 +35,20 @@
             <th scope="row">{{ time }}</th>
 
 
+            {% for week in week_list %}
 
-            <td>
-                {% for schedule in schedules %}
-                    {% if schedule.day_of_the_week == 'Monday' and schedule.start_time == time %}
-                        {{ schedule.start_time }}
-                    {% elif schedule.day_of_the_week == 'Monday' and schedule.end_time == time %}
-                        {{ schedule.end_time }}
-                    {% endif %}
-                {% endfor %}
-            </td>
-
-            <td>
-                {% for schedule in schedules %}
-                    {% if schedule.day_of_the_week == 'Tuesday' and schedule.start_time == time %}
-                        {{ schedule.start_time }}
-                    {% elif schedule.day_of_the_week == 'Tuesday' and schedule.end_time == time %}
-                        {{ schedule.end_time }}
-                    {% endif %}
-                {% endfor %}
-
-            </td>
-
-            <td>
-                {% for schedule in schedules %}
-                    {% if schedule.day_of_the_week == 'Wednesday' and schedule.start_time == time %}
-                        {{ schedule.start_time }}
-                    {% elif schedule.day_of_the_week == 'Wednesday' and schedule.end_time == time %}
-                        {{ schedule.end_time }}
-                    {% endif %}
-                {% endfor %}
-            </td>
+                <td>
+                    {% for schedule in schedules %}
+                        {% if schedule.day_of_the_week == week and schedule.start_time == time %}
+                                <div style="background-color: greenyellow">{{ schedule.start_time }}</div>
+                        {% elif schedule.day_of_the_week == week and schedule.end_time == time %}
+                                <div style="background-color: mediumpurple">{{ schedule.end_time }}</div>
+                        {% endif %}
+                    {% endfor %}
+                </td>
 
 
-            <td>
-                {% for schedule in schedules %}
-                    {% if schedule.day_of_the_week == 'Thursday' and schedule.start_time == time %}
-                        {{ schedule.start_time }}
-                    {% elif schedule.day_of_the_week == 'Thursday' and schedule.end_time == time %}
-                        {{ schedule.end_time }}
-                    {% endif %}
-                {% endfor %}
-            </td>
-
-            <td>
-                {% for schedule in schedules %}
-                    {% if schedule.day_of_the_week == 'Friday' and schedule.start_time == time %}
-                        {{ schedule.start_time }}
-                    {% elif schedule.day_of_the_week == 'Friday' and schedule.end_time == time %}
-                        {{ schedule.end_time }}
-                    {% endif %}
-                {% endfor %}
-            </td>
-
-            <td>
-                {% for schedule in schedules %}
-                    {% if schedule.day_of_the_week == 'Saturday' and schedule.start_time == time %}
-                        {{ schedule.start_time }}
-                    {% elif schedule.day_of_the_week == 'Saturday' and schedule.end_time == time %}
-                        {{ schedule.end_time }}
-                    {% endif %}
-                {% endfor %}
-            </td>
-
-            <td style="background-color: ">
-                {% for schedule in schedules %}
-                    {% if schedule.day_of_the_week == 'Sunday' and schedule.start_time == time %}
-                        {{ schedule.start_time }}
-                    {% elif schedule.day_of_the_week == 'Sunday' and schedule.end_time == time %}
-                        {{ schedule.end_time }}
-                    {% endif %}
-                {% endfor %}
-            </td>
+            {% endfor %}
 
         {% endfor %}
 
