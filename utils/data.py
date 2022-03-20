@@ -13,6 +13,17 @@ def get_time():
 
     return time_list
 
+def get_week():
+
+    week_list = []
+
+    for x in range(7):
+        t = x+1
+
+        week_list.append(t)
+
+    return week_list
+
 class Schedule:
     def __init__(self, _start_time, _end_time, _day_of_the_week):
         self.start_time = _start_time
