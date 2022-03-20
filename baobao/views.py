@@ -8,11 +8,12 @@ from .models import Schedule
 def index(request):
     if request.method == 'GET':
         time_list = data.get_time()
-
-        # Schedule.objects.create(start_time='8:00', end_time='10:00', day_of_the_week='Friday')
+        week_list = data.get_week()
+        print(week_list)
+        # Schedule.objects.create(start_time='12:00', end_time='14:00', day_of_the_week=7)
         schedules = Schedule.objects.all()
         print(schedules)
 
-
         return render(request, 'index.html', context={'time_list': time_list,
-                                                      'schedules': schedules})
+                                                      'week_list': week_list,
+                                                      'schedules': schedules, })
